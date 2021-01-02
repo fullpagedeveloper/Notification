@@ -10,8 +10,10 @@ import android.net.Uri
 import android.os.Build
 import android.os.Bundle
 import android.view.View
+import android.widget.Button
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.app.NotificationCompat
+import com.fullpagedeveloper.simplenotif.service.NotificationService
 
 class MainActivity : AppCompatActivity() {
 
@@ -24,6 +26,11 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+
+        val buttonNotif = findViewById<Button>(R.id.button_show_notification)
+        buttonNotif.setOnClickListener {
+            startService(Intent(this, NotificationService::class.java))
+        }
     }
 
     //aksi untuk onClick button
