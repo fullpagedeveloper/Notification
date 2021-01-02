@@ -1,2 +1,3 @@
+include ':stacknotif'
 include ':app'
 rootProject.name = "SimpleNotif"
